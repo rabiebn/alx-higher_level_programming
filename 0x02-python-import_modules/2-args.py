@@ -10,9 +10,9 @@ if __name__ == "__main__":
     if argc == 1:
         print(".")
     else:
+        if argc == 2:
+            print(":")
+        else:
+            print("s:")
         for i in range(1, argc):
-            if i == 1:
-                print(":")
-            else:
-                print("s:")
             print("{}: {}".format(i, argv[i]))
