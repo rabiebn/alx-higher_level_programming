@@ -1,12 +1,8 @@
 #!/usr/bin/python3
 import sys
-
-argc_0 = "argument."
+argc_0 = "arguments."
 argc_1 = "argument:"
 argc_n = "arguments:"
-def print_arg(argv):
-    for i in range(1, len(argv)):
-        print("{}: {}".format(i, argv[i]))
 
 if __name__ == "__main__":
     argv = sys.argv
@@ -19,4 +15,5 @@ if __name__ == "__main__":
             print("{} {}".format((argc - 1), argc_1))
         else:
             print("{} {}".format((argc - 1), argc_n))
-        print_arg(argv)
+        for i in range(1, argc):
+            print("{}: {}".format(i, argv[i]))
