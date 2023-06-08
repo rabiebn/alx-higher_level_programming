@@ -5,7 +5,7 @@ argc_0 = "argument."
 argc_1 = "argument:"
 argc_n = "arguments:"
 def print_arg(argv):
-    for i in range(1, len(agrv)):
+    for i in range(1, len(argv)):
         print("{}: {}".format(i, argv[i]))
 
 if __name__ == "__main__":
@@ -19,6 +19,4 @@ if __name__ == "__main__":
             print("{} {}".format((argc - 1), argc_1))
         else:
             print("{} {}".format((argc - 1), argc_n))
-
-        for i in range(1, argc):
-            print("{}: {}".format(i, argv[i]))
+        print_arg(argv)
