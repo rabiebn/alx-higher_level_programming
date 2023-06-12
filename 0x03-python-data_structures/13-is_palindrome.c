@@ -36,6 +36,7 @@ int is_palindrome(listint_t **head)
 {
 	size_t count = 0, idx, i = 0, j = 0, half;
 	listint_t *tmp1, *tmp2;
+	int arr[1024];
 
 	if (!*head || !(*head)->next)
 		return (1);
@@ -49,7 +50,6 @@ int is_palindrome(listint_t **head)
 	}
 	count--;
 	half = count / 2;
-	int arr[half];
 
 	idx = count;
 	while (idx > half)
