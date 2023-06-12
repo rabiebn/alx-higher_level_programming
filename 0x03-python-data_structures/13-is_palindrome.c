@@ -8,9 +8,9 @@
  */
 int is_palindrome(listint_t **head)
 {
-	size_t i, j = 0;
+	size_t i = 0, j = 0;
 	listint_t *tmp = *head;
-	int arr[1024];
+	int arr[128];
 
 	if (!*head || !(*head)->next)
 		return (1);
@@ -22,10 +22,11 @@ int is_palindrome(listint_t **head)
 		j++;
 	}
 	j--;
-	for (i = 0; i<= (j / 2); i++)
+	while (i <= (j / 2))
 	{
 		if (arr[i] != arr[j - i])
 			return (0);
+		i++;
 	}
 	return (1);
 }
