@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""Square Module Docs
+Author: Rabia Benmer
+"""
+
+
 class Square:
-    """Return Square definition"""
+    """Return a Square object"""
+    
     pass
