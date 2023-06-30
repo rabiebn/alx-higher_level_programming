@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module 1-square
+Module 4-square
 Defines class Square with private attribute size
 Author: Rabia Benmer
 """
@@ -26,7 +26,7 @@ class Square:
             size (int): size of square side.
         """
         self.size = size
-    
+
     @property
     def size(self):
         """
@@ -35,7 +35,6 @@ class Square:
         Return: size
         """
         return self.__size
-
 
     @setter.size
     def size(self, value):

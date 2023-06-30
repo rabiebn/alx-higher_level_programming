@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module 1-square
+Module 2-square
 Defines class Square with private attribute size
 Author: Rabia Benmer
 """
