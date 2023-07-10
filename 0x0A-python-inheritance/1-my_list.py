@@ -19,6 +19,6 @@ class MyList(list):
         """
         Function prints a sorted list.
         """
-    my_list = self[:]
-    my_list.sort()
-    print(my_list)
+        my_list = self[:]
+        my_list.sort()
+        print(my_list)
