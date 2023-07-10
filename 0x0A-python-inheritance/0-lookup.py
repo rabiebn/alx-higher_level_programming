@@ -7,7 +7,7 @@
 
 def lookup(obj):
     """
-    Function that returns the list of availible attributes 
+    Function that returns the list of availible attributes
     and methods of an object.
 
     Args:
