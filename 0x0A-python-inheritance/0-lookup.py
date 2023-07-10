@@ -6,6 +6,14 @@
 
 
 def lookup(obj):
-    """Returns a list object"""
+    """
+    Function that returns the list of availible attributes 
+    and methods of an object.
 
-    return obj.__dict__
+    Args:
+        obj: Object to print contents of
+
+    Return:
+        list object's attributes
+    """
+    return dir(obj)
