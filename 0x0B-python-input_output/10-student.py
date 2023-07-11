@@ -32,10 +32,12 @@ class Student():
         Return:
             attributes 'attrs' in dict representation of a Student instance.
         """
-        obj_dict = self.__dict__
+        obj_dict = dict()
+        if attrs == None:
+            return self.__dict__
 
-        for k in attrs:
-            if k not in obj_dict.keys():
-                del obj_dict[k]
+        for k in self.__dict__.keys():
+            if k in attrs:
+                obj_dict[k] = self.__dict__[k]
 
         return obj_dict
