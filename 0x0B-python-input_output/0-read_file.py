@@ -6,6 +6,13 @@
 
 
 def read_file(filename=""):
-    with open(filename, mode='r', encoding='UTF-8') as a_file:
+    """
+    reads a text file (UTF8) and prints it to stdout.
+
+    Args:
+        filename (string): file name to open and print.
+    """
+
+    with open(filename, encoding='UTF-8') as a_file:
         for line in a_file:
             print(line, end='')
