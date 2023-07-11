@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+7-add_item Module adds arguments to a list
+and append it to a JSON file'add_item.json'.
+"""
+
+
 import sys
 
 save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
