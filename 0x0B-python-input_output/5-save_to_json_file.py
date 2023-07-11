@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
 5-save_to_json_file Module has 1 function:
-    from_json_string()
+    save_to_json_file()
 """
+
 
 def save_to_json_file(my_obj, filename):
     """
