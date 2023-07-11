@@ -33,7 +33,7 @@ class Student():
             attributes 'attrs' in dict representation of a Student instance.
         """
         obj_dict = dict()
-        if attrs == None:
+        if attrs is None:
             return self.__dict__
 
         for k in self.__dict__.keys():
