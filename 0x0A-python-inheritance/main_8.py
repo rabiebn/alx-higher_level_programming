@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 Rectangle = __import__('8-rectangle').Rectangle
+BaseGeometry = __import__('8-rectangle').BaseGeometry
 
 r = Rectangle(3, 5)
 
@@ -15,3 +16,7 @@ try:
     r2 = Rectangle(4, True)
 except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
+
+print("####")
+
+print(issubclass(Rectangle, BaseGeometry))
