@@ -10,12 +10,15 @@ def append_after(filename="", search_string="", new_string=""):
     a specific string.
     """
 
-    new_file = ""
+    new_file = []
     with open(filename, mode='r', encoding='UTF-8') as my_file:
-        for line in my_file:
-            new_file += line
-            if search_string in line:
-                new_file += search_string
+        file_lines = my_file.readlines()
+
+    lines = []
+    for line in file_lines:
+        lines.append(line)
+        if search_string in line:
+            lines.append(new_string)
 
     with open(filename, mode='w', encoding='UTF-8') as my_file:
         my_file.writelines(lines)
