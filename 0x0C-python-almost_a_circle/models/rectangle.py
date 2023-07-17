@@ -1,23 +1,32 @@
 #!/usr/bin/python3
-"""Rectanlge Module."""
+"""Module has class Rectangle"""
 
 
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Rectangle Class."""
-    def __init__(self, width, height, x=0, y=0, id=None):
-        """
-        Init
+    """
+    Rectangle Class; Inherits from class Base
+    Inherited Attributes:
+        id
+    Class Attributes:
+        __width
+        __height
+        __x
+        __y
+    Methods:
+        __init__(self, width, height, x=0, y=0, id=None)
+        update(self, *args, **kwargs)
+        width(self)      width(self, value)
+        height(self)     height(self, value)
+        x(self)          x(self, value)
+        y(self)          y(self, value)
+        area(self)       display(self)
+    """
 
-        Args:
-            width (int)
-            height (int)
-            x (int)
-            y (int)
-            id (int)
-        """
+    def __init__(self, width, height, x=0, y=0, id=None):
+        """Initialize"""
         self.width = width
         self.height = height
         self.x = x
@@ -103,15 +112,13 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                 self.id, self.x, self.y, self.width, self.height)
 
-    def update(self, *args, **kwargs):
-        """
+        def update(self, *args, **kwargs):
+            """
         Assigns an argument to each attribute.
 
         Args:
             *args: tupil arguments.
         """
-        for k, v in kwargs.items():
-            print("{}: {}".format(k, v))
         if args:
             if len(args) >= 1:
                 self.id = args[0]
@@ -124,7 +131,6 @@ class Rectangle(Base):
             if len(args) >= 5:
                 self.y = args[4]
         else:
-            print("args is NULL and now checking kwargs")
             if "id" in kwargs.keys():
                 self.id = kwargs["id"]
             if "width" in kwargs.keys():
