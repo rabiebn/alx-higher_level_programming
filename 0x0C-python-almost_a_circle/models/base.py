@@ -2,6 +2,9 @@
 """Base Module"""
 
 
+import json
+
+
 class Base():
     """
     Base Class.
@@ -25,3 +28,10 @@ class Base():
             self.id = id
         else:
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """Returns JSON string representation of list_dictionaries"""
+        if list_dictionaries is None:
+            return "[]"
+        return json.dumps(list_dictionaries)
