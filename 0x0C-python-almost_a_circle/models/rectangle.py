@@ -131,13 +131,13 @@ class Rectangle(Base):
             if len(args) >= 5:
                 self.y = args[4]
         else:
-            if "id" in kwargs.keys():
+            if "id" in kwargs:
                 self.id = kwargs["id"]
-            if "width" in kwargs.keys():
+            if "width" in kwargs:
                 self.width = kwargs["width"]
-            if "height" in kwargs.keys():
+            if "height" in kwargs:
                 self.height = kwargs["height"]
-            if "x" in kwargs.keys():
+            if "x" in kwargs:
                 self.x = kwargs["x"]
-            if "y" in kwargs.keys():
+            if "y" in kwargs:
                 self.y = kwargs["y"]
