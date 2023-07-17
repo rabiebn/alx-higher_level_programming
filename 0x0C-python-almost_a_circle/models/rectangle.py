@@ -7,7 +7,6 @@ from models.base import Base
 
 class Rectangle(Base):
     """Rectangle Class."""
-
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         Init
@@ -19,10 +18,10 @@ class Rectangle(Base):
             y (int)
             id (int)
         """
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
         super().__init__(id)
 
@@ -85,17 +84,54 @@ class Rectangle(Base):
 
     def area(self):
         """Calculating Area"""
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """Display the Rectangle with #"""
-
-        for j in range(self.__height):
-            for i in range(self.__width - 1):
-                print("#", end='')
+        for x in range(self.y):
+            print("")
+        for j in range(self.height):
+            for i in range(self.width + self.x - 1):
+                if i < self.x:
+                    print(" ", end="")
+                else:
+                    print("#", end='')
             print("#")
 
     def __str__(self):
         """str"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
-                self.id, self.__x,  self.__y, self.__width, self.__height)
+                self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        """
+        Assigns an argument to each attribute.
+
+        Args:
+            *args: tupil arguments.
+        """
+        for k, v in kwargs.items():
+            print("{}: {}".format(k, v))
+        if args:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.width = args[1]
+            if len(args) >= 3:
+                self.lenght = args[2]
+            if len(args) >= 4:
+                self.x = args[3]
+            if len(args) >= 5:
+                self.y = args[4]
+        else:
+            print("args is NULL and now checking kwargs")
+            if "id" in kwargs.keys():
+                self.id = kwargs["id"]
+            if "width" in kwargs.keys():
+                self.width = kwargs["width"]
+            if "height" in kwargs.keys():
+                self.height = kwargs["height"]
+            if "x" in kwargs.keys():
+                self.x = kwargs["x"]
+            if "y" in kwargs.keys():
+                self.y = kwargs["y"]
