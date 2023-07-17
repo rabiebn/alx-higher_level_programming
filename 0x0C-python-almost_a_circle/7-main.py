@@ -7,7 +7,7 @@ if __name__ == "__main__":
     r1 = Rectangle(10, 10, 10, 10)
     print(r1)
 
-    r1.update(89)
+    r1.update()
     print(r1)
 
     r1.update(89, 2)
@@ -19,5 +19,5 @@ if __name__ == "__main__":
     r1.update(89, 2, 3, 4)
     print(r1)
 
-    r1.update(89, 2, 3, 4, 5)
+    r1.update(89, 2, 3, 4, 5, 7)
     print(r1)
