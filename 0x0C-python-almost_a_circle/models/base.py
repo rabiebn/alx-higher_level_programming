@@ -20,9 +20,7 @@ class Base():
             id (int).
 
         """
-
-        Base.__nb_object += 1
-
+        Base.__nb_objects += 1
         if id is not None:
             self.id = id
         else:
