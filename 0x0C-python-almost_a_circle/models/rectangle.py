@@ -3,6 +3,7 @@
 
 
 from models.base import Base
+import json
 
 
 class Rectangle(Base):
@@ -141,3 +142,7 @@ class Rectangle(Base):
                 self.x = kwargs["x"]
             if "y" in kwargs:
                 self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """Returns the dictionnary representation of a Rectangle object"""
+        return self.__dict__
