@@ -47,3 +47,10 @@ class Base():
                     list(d.to_dictionary() for d in list_objs)))
             else:
                 file.write("[]")
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns list of the JSON string representation 'json_string'"""
+        if json_string:
+            return json.loads(json_string)
+        return []
