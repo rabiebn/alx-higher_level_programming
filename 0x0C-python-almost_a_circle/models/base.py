@@ -65,3 +65,18 @@ class Base():
         obj.update(**dictionary)
 
         return obj
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances"""
+        try:
+            file = open("{}.json".format(cls.__name__), "r", encoding='UTF-8')
+        except Exception as e:
+            return []
+
+        obj_list = []
+        instances = cls.from_json_string(file.read())
+        for i in instances:
+            obj_list.append(cls.create(**i))
+
+        return obj_list
