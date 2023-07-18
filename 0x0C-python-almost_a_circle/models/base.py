@@ -3,6 +3,7 @@
 
 
 import json
+import csv
 
 
 class Base():
@@ -80,3 +81,37 @@ class Base():
             obj_list.append(cls.create(**i))
 
         return obj_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes from CSV"""
+        with open("{}.csv".format(cls.__name__), "w", newline='',
+                  encoding='UTF-8') as file:
+            w = csv.writer(file)
+            for obj in list_objs:
+                if cls.__name__ == "Rectangle":
+                    w.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                else:
+                    w.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializes from CSV"""
+        objs = list()
+        with open("{}.csv".format(cls.__name__),
+                  "r", newline='', encoding='UTF-8') as file:
+            reader = csv.reader(file)
+            for line in reader:
+                if cls.__name__ == "Rectangle":
+                    dict = {"id": int(line[0]),
+                            "width": int(line[1]),
+                            "height": int(line[2]),
+                            "x": int(line[3]),
+                            "y": int(line[4])}
+                else:
+                    dict = {"id": int(line[0]),
+                            "size": int(line[1]),
+                            "x": int(line[2]),
+                            "y": int(line[3])}
+                objs.append(cls.create(**dict))
+        return objs
