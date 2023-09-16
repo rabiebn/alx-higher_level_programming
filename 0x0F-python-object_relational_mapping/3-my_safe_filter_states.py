@@ -20,5 +20,4 @@ if __name__ == '__main__':
         states = cur.fetchall()
     for row in states:
         print(row)
-    cur.close()
     db.close()
