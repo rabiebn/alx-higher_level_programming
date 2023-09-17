@@ -26,4 +26,3 @@ if __name__ == '__main__':
             print(states[-1][0])
         except Exception as e:
             print('')
-
