@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Updates State name in states table in DB hbtn_0e_6_usa.
+Deletes State objs in states table with 'a' in the name in DB hbtn_0e_6_usa.
 """
 from sys import argv
 from model_state import Base, State
@@ -15,13 +15,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).filter(State.id_state == 2).update({
-        'name': 'New Mexico'})
+    del_state = session.query(State).filter(State.name.like('%a%')).delete(
+            synchronize_session=False)
     session.commit()
-
-    """
-    # 2nd method to update an entry:
-    state = session.query(State).filter(State.id_state == 2).one()
-    state.name = 'New Mexico'
-    session.commit()
-    """
