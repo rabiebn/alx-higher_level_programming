@@ -20,8 +20,10 @@ if __name__ == '__main__':
                         'state': argv[4],
                         })
         states = cur.fetchall()
-    for row in states[0:-1]:
-        print(row[0], end=', ')
-    print(states[-1][0])
+        try:
+            for row in states[0:-1]:
+                print(row[0], end=', ')
+            print(states[-1][0])
+        except Exception as e:
+            print('')
 
-    db.close()
