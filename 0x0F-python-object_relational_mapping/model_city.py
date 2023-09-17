@@ -11,7 +11,7 @@ class City(Base):
     City class
     """
     __tablename__ = 'cities'
-    id_city = Column('id', Integer, primary_key=True, autoincrement=True)
+    id = Column('id', Integer, primary_key=True, autoincrement=True)
     name = Column('name', String(128), nullable=False)
     state_id = Column('state_id', Integer, ForeignKey("states.id"))
 
