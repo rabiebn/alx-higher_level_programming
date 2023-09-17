@@ -12,7 +12,7 @@ if __name__ == '__main__':
     with db.cursor() as cur:
         cur.execute("""
                     SELECT * FROM states
-                    WHERE name = '{}'
+                    WHERE name = "{}"
                     ORDER BY id
                     """.format(sys.argv[4]))
         states = cur.fetchall()
