@@ -21,3 +21,5 @@ if __name__ == "__main__":
         print(state.id_state)
     except exc.NoResultFound as e:
         print("Not Found")
+
+        # 2 Checks failed: Might be it's not safe from sql injection
