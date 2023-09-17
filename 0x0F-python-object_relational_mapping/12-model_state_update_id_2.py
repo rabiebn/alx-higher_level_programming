@@ -15,8 +15,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).filter(State.id_state == 2).update()\
-        .values({'name': 'New Mexico'})
+    state = session.query(State).filter(State.id_state == 2).update({
+        'name': 'New Mexico'})
     session.commit()
 
     """
