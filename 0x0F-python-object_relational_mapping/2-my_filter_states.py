@@ -16,6 +16,5 @@ if __name__ == '__main__':
                     ORDER BY id
                     """.format(sys.argv[4]))
         states = cur.fetchall()
-    for row in states:
-        print(row)
-    db.close()
+        for row in states:
+            print(row)
