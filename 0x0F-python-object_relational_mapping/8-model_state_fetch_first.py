@@ -16,6 +16,6 @@ if __name__ == "__main__":
 
     try:
         state = session.query(State).first()
-        print("{}: {}".format(state.id_state, state.name))
+        print("{}: {}".format(state.id, state.name))
     except Exception as e:
         print("Nothing")

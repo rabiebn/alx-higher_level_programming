@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     try:
         state = session.query(State).filter(State.name.__eq__(argv[4])).one()
-        print(state.id_state)
+        print(state.id)
     except exc.NoResultFound as e:
         print("Not Found")
 

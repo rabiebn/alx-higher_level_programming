@@ -15,13 +15,13 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).filter(State.id_state == 2).update({
+    state = session.query(State).filter(State.id == 2).update({
         'name': 'New Mexico'})
     session.commit()
 
     """
     # 2nd method to update an entry:
-    state = session.query(State).filter(State.id_state == 2).one()
+    state = session.query(State).filter(State.id == 2).one()
     state.name = 'New Mexico'
     session.commit()
     """
